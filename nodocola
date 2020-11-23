@@ -1,0 +1,12 @@
+package coladinamica;
+
+public class nodocola {
+	
+		String elmento;
+	    nodocola siguiente;
+	    
+	    public nodocola(String elemento){
+	       this.elmento=elemento;
+	       siguiente=null;
+	    }
+}
