@@ -1,0 +1,58 @@
+package coladinamica;
+import java.util.Scanner;
+public class main {
+
+	public static void main(String[] args) {
+		
+		  Scanner sn=new Scanner(System.in);
+	        boolean salir=false;
+	        int opcion,num;
+	       coladinamica cola=new coladinamica();
+	        while(!salir){
+	            System.out.println("Dame una opcion del menu:");
+	            System.out.println("===MENU===");
+	            System.out.println("1.-NUEVO CLIENTE:");
+	            System.out.println("2.-PASAR A VENTANILLA:");	           
+	            System.out.println("3.-MOSTRAR COLAS:");
+	            System.out.println("4.-TERMINAR UNA VENTANILLA:");
+	            System.out.println("5.-SALIR:");
+	               opcion=sn.nextInt();
+	              
+	            switch(opcion){
+	                case 1:
+	                System.out.println("Dame el elemento:");	                	
+	                String elemento=sn.next();
+	                //cola.empujar();
+	                /*num=(int)(Math.random()*2+0);
+						if (num==0) {
+						System.out.println(num+1+" "+"usuario :vip:");
+					}else {
+						System.out.println(num+1+" "+"usuario :comun:");
+					}
+						//turno=(int)(Math.random()*10+1);
+				*/
+	                	cola.empujar(elemento);
+	                    break;
+	                case 2:
+	                 cola.sacar();
+	                 cola.pasar_a_ventanilla();
+	                    break;
+	                case 3:
+	                    cola.mostrar();
+	                    break;
+	                case 4:
+	                	cola.terminar_ventanilla();
+	                	break;
+	                case 5:
+	                    salir=true;
+	                    break;
+	                default:   
+	                    System.out.println("la opcion no esta en el menu");
+	            }
+	             
+	               }
+	        System.out.println("final del menu");
+
+	}//main
+
+}//class
