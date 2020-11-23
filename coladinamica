@@ -1,0 +1,92 @@
+package coladinamica;
+import java.util.Scanner;
+public class coladinamica {
+	int turno;
+	int ventanilla[]=new int [3];
+	Scanner sn=new Scanner(System.in);
+	//String VIP[] =new String[3];
+	//String COMUN[] =new String[3];
+	int contVIP,contCOMUN,usuarios;
+	   nodocola raiz;
+	    int tamaño;
+	    public boolean estavacia() {
+	    	return raiz ==null;
+	    }
+	    public void empujar(String elemento){
+	    int ls=2,li=0;
+	    /*if(turno==0) {	    
+			turno=(int)(Math.random()*10+1);
+		}else {
+			turno++;
+			int num=(int)(Math.random()*2+0);
+			if(num==0) {
+				System.out.println("usuario"+VIP);
+			}else {
+				System.out.println("usuario"+COMUN);
+			}
+		}*/
+	    //turno=(int)(Math.random()*2+0);	    	    		
+				 nodocola nodo=new nodocola(elemento);	        				  
+				   nodo.siguiente=raiz;
+				   raiz=nodo;
+				   tamaño++;  	
+					int num=(int)(Math.random()*2+0);
+					if (num==0) {
+						System.out.println("usuario vip:");
+						contVIP ++;
+					}else {
+						for(int i=0;i<usuarios;i++) {
+						System.out.println("usuario comun:");
+						contCOMUN ++;
+						
+						}
+					}
+		usuarios=contVIP+contCOMUN;
+	    }
+	    public void sacar(){
+	    	if(estavacia()) {
+	    		System.out.println("Esta vacia:");
+	    	}else {
+	    		//cima=cima.siguiente;
+	    		raiz=raiz.siguiente;
+	    		tamaño--;	
+	    	}
+	       
+	        
+	    }
+	    
+	    public void mostrar(){
+	    	
+	    	if(estavacia()) {
+	    		System.out.println("Esta vacia:");
+	    	}else {
+	    		
+	        nodocola recorre=raiz;
+	        while(recorre!=null){
+	            System.out.println(recorre.elmento);
+	            recorre=recorre.siguiente;
+	        		}
+	    		}
+	    	usuarios=(int)(Math.random()*usuarios)+1;
+	    	System.out.println(usuarios);
+	    	}
+	    public void pasar_a_ventanilla() {
+	    	if(estavacia()){
+	    		System.out.println("Esta vacia:");
+	    	}else {
+	    		for (int i = 0; i <3; i++) {
+	    			usuarios=(int)(Math.random()*2+0);
+				//ventanilla[i]=sn.nextInt();
+				}
+	    	}
+	    }
+	    public void terminar_ventanilla() {
+	    	if(estavacia()) {
+	    		System.out.println("Esta vacia:");
+	    	}else {
+	    		usuarios=(int)(Math.random()*usuarios)+1;
+	    		System.out.println(usuarios);
+	    	}
+	    }
+	    }//class
+	    
